@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: keyboardMapping
       value: h
       objectReference: {fileID: 0}
+    - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
+      propertyPath: mixerParameterName
+      value: key-a
+      objectReference: {fileID: 0}
     - target: {fileID: 4339123655308014716, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -318,6 +322,10 @@ PrefabInstance:
     - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: keyboardMapping
       value: d
+      objectReference: {fileID: 0}
+    - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
+      propertyPath: mixerParameterName
+      value: key-e
       objectReference: {fileID: 0}
     - target: {fileID: 4339123655308014716, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: m_RootOrder
@@ -489,6 +497,10 @@ PrefabInstance:
       propertyPath: keyboardMapping
       value: f
       objectReference: {fileID: 0}
+    - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
+      propertyPath: mixerParameterName
+      value: key-f
+      objectReference: {fileID: 0}
     - target: {fileID: 4339123655308014716, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -565,6 +577,10 @@ PrefabInstance:
     - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: keyboardMapping
       value: a
+      objectReference: {fileID: 0}
+    - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
+      propertyPath: mixerParameterName
+      value: key-c
       objectReference: {fileID: 0}
     - target: {fileID: 4339123655308014716, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: m_RootOrder
@@ -692,13 +708,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 6, z: 2.5}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 0, y: 5, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!1001 &1712166555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -721,6 +737,10 @@ PrefabInstance:
     - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: keyboardMapping
       value: j
+      objectReference: {fileID: 0}
+    - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
+      propertyPath: mixerParameterName
+      value: key-b
       objectReference: {fileID: 0}
     - target: {fileID: 4339123655308014716, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: m_RootOrder
@@ -799,6 +819,10 @@ PrefabInstance:
       propertyPath: keyboardMapping
       value: g
       objectReference: {fileID: 0}
+    - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
+      propertyPath: mixerParameterName
+      value: key-g
+      objectReference: {fileID: 0}
     - target: {fileID: 4339123655308014716, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -849,6 +873,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
+--- !u!1 &1861331868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1861331870}
+  - component: {fileID: 1861331869}
+  m_Layer: 0
+  m_Name: MouseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1861331869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861331868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083767b4ad54b4d9ca37d83bf07b4a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: b768f2124a60f4ed2aa9e449cc121a31, type: 2}
+--- !u!4 &1861331870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861331868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4834963, y: 0.09519117, z: 2.582803}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2026196238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -875,6 +943,10 @@ PrefabInstance:
     - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: keyboardMapping
       value: s
+      objectReference: {fileID: 0}
+    - target: {fileID: 444761280683136261, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
+      propertyPath: mixerParameterName
+      value: key-d
       objectReference: {fileID: 0}
     - target: {fileID: 4339123655308014716, guid: ba3062e08a2ab45bdaca32317c9e0b6e, type: 3}
       propertyPath: m_RootOrder

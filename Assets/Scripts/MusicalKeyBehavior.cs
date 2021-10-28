@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MusicalKeyBehavior : MonoBehaviour
 {
     [SerializeField] Color keyColor = new Color(0, 0, 0);
     [SerializeField] string keyboardMapping = "";
+
+    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] string mixerParameterName = "";
 
     private bool isPushed = false;
 
@@ -25,8 +29,7 @@ public class MusicalKeyBehavior : MonoBehaviour
                 4.0f
                 );
             isPushed = true;
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
+            audioMixer.SetFloat(mixerParameterName, 1.0f);
         } else if(Input.GetKey(keyboardMapping) == false && isPushed) {
             this.transform.RotateAround(
                 this.transform.position,
@@ -34,8 +37,7 @@ public class MusicalKeyBehavior : MonoBehaviour
                 -4.0f
                 );
             isPushed = false;
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Stop();
+            audioMixer.SetFloat(mixerParameterName, 0.0f);
         }
     }
 }

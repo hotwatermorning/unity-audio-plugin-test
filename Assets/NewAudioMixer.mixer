@@ -13,9 +13,27 @@ AudioMixerController:
   - {fileID: 24500006}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
-  m_EnableSuspend: 1
+  m_EnableSuspend: 0
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: f7dab1e8a03914c10bf0561615477c08
+    name: reverb
+  - guid: 9f315e84dd5e54bbc9f9d40a93bf9280
+    name: key-c
+  - guid: 44bb6447e0e754c9f820ebbf7b9d8c54
+    name: key-d
+  - guid: 40bd26bdbcdff4742971940fbcfb9cd6
+    name: key-e
+  - guid: 28e4fa2a912c34f5ab7c462482602ed1
+    name: key-f
+  - guid: 9dc5fcb39fb894eb482e363af01f32fc
+    name: key-g
+  - guid: 2e3c35914ed3047ed97852adcb37332f
+    name: key-a
+  - guid: b484639700377478b8c0863b8ecc3621
+    name: key-b
+  - guid: a0525a7d458924c3fa616a0f664a2900
+    name: gain
   m_AudioMixerGroupViews:
   - guids:
     - 09e176cab32444d58a2ca53f3bbc1016
@@ -36,6 +54,7 @@ AudioMixerGroupController:
   m_Pitch: 5a21ead36cdba4f3a979637b1a47a4ca
   m_Send: 00000000000000000000000000000000
   m_Effects:
+  - {fileID: 7345249035835795936}
   - {fileID: 24400004}
   m_UserColorIndex: 0
   m_Mute: 0
@@ -65,5 +84,41 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 7bb644ee97be04b829fcf114b08c7a39
   m_FloatValues:
+    9f315e84dd5e54bbc9f9d40a93bf9280: 0
+    44bb6447e0e754c9f820ebbf7b9d8c54: 0
+    f7dab1e8a03914c10bf0561615477c08: 0.793
+    a0525a7d458924c3fa616a0f664a2900: 0.651
     5eb5b59e3529a447582e9cde0b6e8d9e: 0.415
   m_TransitionOverrides: {}
+--- !u!244 &7345249035835795936
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 9aefa81de3e55401786e64620601f2e8
+  m_EffectName: audioplugin_MyJuceUnityPlugin
+  m_MixLevel: f29bc0c95b77248f98ca6df1933d63c4
+  m_Parameters:
+  - m_ParameterName: gain
+    m_GUID: a0525a7d458924c3fa616a0f664a2900
+  - m_ParameterName: reverb
+    m_GUID: f7dab1e8a03914c10bf0561615477c08
+  - m_ParameterName: key-c
+    m_GUID: 9f315e84dd5e54bbc9f9d40a93bf9280
+  - m_ParameterName: key-d
+    m_GUID: 44bb6447e0e754c9f820ebbf7b9d8c54
+  - m_ParameterName: key-e
+    m_GUID: 40bd26bdbcdff4742971940fbcfb9cd6
+  - m_ParameterName: key-f
+    m_GUID: 28e4fa2a912c34f5ab7c462482602ed1
+  - m_ParameterName: key-g
+    m_GUID: 9dc5fcb39fb894eb482e363af01f32fc
+  - m_ParameterName: key-a
+    m_GUID: 2e3c35914ed3047ed97852adcb37332f
+  - m_ParameterName: key-b
+    m_GUID: b484639700377478b8c0863b8ecc3621
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0

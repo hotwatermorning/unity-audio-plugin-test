@@ -142,6 +142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyColor: {r: 0, g: 0, b: 0, a: 1}
   keyboardMapping: 
+  audioMixer: {fileID: 24100000, guid: b768f2124a60f4ed2aa9e449cc121a31, type: 2}
+  mixerParameterName: 
 --- !u!82 &-8023740979204105583
 AudioSource:
   m_ObjectHideFlags: 0
