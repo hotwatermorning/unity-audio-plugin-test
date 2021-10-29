@@ -11,7 +11,20 @@ public class MusicalKeyBehavior : MonoBehaviour
     [SerializeField] AudioMixer audioMixer;
     [SerializeField] string mixerParameterName = "";
 
-    private bool isPushed = false;
+    private bool isMousePushed = false;
+    private bool isComputerKeyPushed = false;
+    private bool isNoteOnTriggered = false;
+    private GameObject body = null;
+
+    public void MousePushOn()
+    {
+        isMousePushed = true;
+    }
+
+    public void MousePushOff()
+    {
+        isMousePushed = false;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,21 +35,26 @@ public class MusicalKeyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(keyboardMapping) && isPushed == false) {
+        isComputerKeyPushed = Input.GetKey(keyboardMapping);
+
+        bool isPushedAny = (isComputerKeyPushed || isMousePushed);
+
+        if (isPushedAny && isNoteOnTriggered == false) {
+
             this.transform.RotateAround(
                 this.transform.position,
                 Vector3.left,
                 4.0f
                 );
-            isPushed = true;
+            isNoteOnTriggered = true;
             audioMixer.SetFloat(mixerParameterName, 1.0f);
-        } else if(Input.GetKey(keyboardMapping) == false && isPushed) {
+        } else if(isPushedAny == false && isNoteOnTriggered) {
             this.transform.RotateAround(
                 this.transform.position,
                 Vector3.left,
                 -4.0f
                 );
-            isPushed = false;
+            isNoteOnTriggered = false;
             audioMixer.SetFloat(mixerParameterName, 0.0f);
         }
     }

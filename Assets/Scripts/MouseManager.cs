@@ -10,15 +10,41 @@ public class MouseManager : MonoBehaviour
     private Vector3 currentPosition = Vector3.zero;
 
     [SerializeField] AudioMixer audioMixer;
+    List<GameObject> keys = new List<GameObject>();
  
     void Start()
     {
         mainCamera = Camera.main;
+
+        keys.Add(GameObject.Find("KeyC"));
+        keys.Add(GameObject.Find("KeyD"));
+        keys.Add(GameObject.Find("KeyE"));
+        keys.Add(GameObject.Find("KeyF"));
+        keys.Add(GameObject.Find("KeyG"));
+        keys.Add(GameObject.Find("KeyA"));
+        keys.Add(GameObject.Find("KeyB"));
     }
 
     // Update is called once per frame
     void Update()
     {
+        GameObject found = null;
+        if (Input.GetMouseButton(0)) {
+            var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit)) {
+                found = hit.collider.gameObject;
+            }
+        }
+
+        foreach(GameObject key in keys) {
+            if(found && found.transform.IsChildOf(key.transform)) {
+                key.GetComponent<MusicalKeyBehavior>().MousePushOn();
+            } else {
+                key.GetComponent<MusicalKeyBehavior>().MousePushOff();
+            }
+        }
+
         if (Input.GetKey(KeyCode.LeftArrow)) {
             float value = 0.0f;
             audioMixer.GetFloat("reverb", out value);
@@ -50,17 +76,5 @@ public class MouseManager : MonoBehaviour
 
             audioMixer.SetFloat("gain", value);
         }
-
-        // if (Input.GetMouseButton(0)) {
-        //     var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        //     var raycastHitList = Physics.RaycastAll(ray).ToList();
-        //     if (raycastHitList.Any()) {
-        //         var distance = Vector3.Distance(mainCamera.transform.position, raycastHitList.First().point);
-        //         var mousePosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distance);
- 
-        //         currentPosition = mainCamera.ScreenToWorldPoint(mousePosition);
-        //         currentPosition.y = 0;
-        //     }
-        // }
     }
 }
